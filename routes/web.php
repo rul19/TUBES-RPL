@@ -39,24 +39,24 @@ Route::group(['middleware' => 'auth','prefix' => 'admin'],function () {
     Route::get('/dashboard',[AdminController::class, 'index']);
 
 
-    Route::get('/datapesan',[PesananController::class, 'showpesan']);
+    Route::get('/datapesan', [PesananController::class, 'showpesan'])->name('datapesan');
     Route::delete('/hapus_pesan/{id}',[PesananController::class, 'hapuspesan']);
     
 
 
-    Route::get('/datameja',[MejaController::class, 'showmeja']);
+    Route::get('/datameja',[MejaController::class, 'showmeja'])->name('datameja');
     Route::post('/tambah_meja',[MejaController::class, 'tambahmeja']);
     Route::put('/edit_meja/{id}',[MejaController::class, 'editmeja']);
     Route::delete('/hapus_meja/{id}',[MejaController::class, 'hapusmeja']);
 
 
-    Route::get('/datamenu',[MenuController::class, 'showmenu']);
+    Route::get('/datamenu',[MenuController::class, 'showmenu'])->name('datamenu');
     Route::post('/tambah_menu',[MenuController::class, 'tambahmenu']);
     Route::put('/edit_menu/{id}',[MenuController::class, 'editmenu']);
-    Route::delete('/hapus_menu/{id}',[MenuController::class, 'hapusmenu']);
+    Route::delete('/hapus_menu/{id}', [MenuController::class, 'hapusmenu'])->name('menu.delete');
 
 
-    Route::get('/datakategori',[KategoriController::class, 'showkategori']);
+    Route::get('/datakategori',[KategoriController::class, 'showkategori'])->name('datakategori');
     Route::post('/tambah_kategori',[KategoriController::class, 'tambahkategori']);
     Route::put('/edit_kategori/{id}',[KategoriController::class, 'editkategori']);
     Route::delete('/hapus_kategori/{id}',[KategoriController::class, 'hapuskategori']);

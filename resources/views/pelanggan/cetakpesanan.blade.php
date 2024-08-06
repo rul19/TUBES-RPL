@@ -66,8 +66,8 @@
     <figure>
         <img src="{{ asset('img/pandalogo.png') }}" alt="pandaman">
     </figure>
-    <p class="title">Caffe Talk</p>
-    <p class="alamat">Jl.Banana <br> Samarinda</p>
+    <p class="title">Cihuy Cafe</p>
+    <p class="alamat">Jl.Dipatiukur <br> Bandung</p>
     <table class="pos">
         <tr>
             <td style="text-align:right; width:630px;">Pos Title:</td>
@@ -97,13 +97,21 @@
     <hr>
     <table class="table-total">
         <tr>
+            
             <th style="width: 530px; text-align: right;">Total :</th>
             <td style="width: 150px; text-align: right;">Rp {{ $dtpemesan->Total }}</td>
+            <tr>
+                <th style="width: 530px; text-align: right; text-bold" > <b>Kembalian :</th>
+                <td style="width: 150px; text-align: right;">Rp {{ $dtpemesan->Angsul}}</td>
+            </tr>
+
         </tr>
     </table>
     <hr>
     <hr style="margin-top: 4px">
     <p class="thanks"> Terima Kasih - Silahkan Datang Lagi!</p>
+    <p class="thanks"> CIHUYYY!!!!!</p>
+    
 </body>
 <script>
     window.print();

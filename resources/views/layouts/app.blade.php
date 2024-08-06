@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     @yield('style')
     
-    <title>Pelanggan - Caffe</title>
+    <title>Pelanggan - Cafe</title>
   </head>
   <body>
     @yield('content')

@@ -8,8 +8,8 @@
 
 @section('content')
 <div class="black"></div>
-<div class="top-bar mx-4">
-  <h1 class="text-white text-center overflow-hidden">Menu Caffe</h1>
+<div class="top-bar mx-">
+  <h1 class="text-white text-center overflow-hidden">Menu Cafe Cihuy</h1>
 </div> 
 <div class="row ms-0" style="height: 84vh;">
     <div class="col-3 form-pemesan p-4">
@@ -37,7 +37,7 @@
     <div class="col-9 menu-makan example">
       @foreach($dtkat as $kat)
         @if ($kat->jumlah > 0)
-        <h3 class="text-center text-white">{{ $kat->nama_kategori }}</h3>
+        <h3 class="text-center m-1 text-white">{{ $kat->nama_kategori }}</h3>
 
         <div class="container menu_makanan">
             @foreach($dtmenu as $menu)

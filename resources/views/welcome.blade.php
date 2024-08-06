@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Caffe talk</title>
+    <title>Cihuy Caffe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap" rel="stylesheet">
     <style>
         body{
-            background: linear-gradient(180.31deg, #FFFFFF 41.9%, #C98826 108.55%);
+            background: linear-gradient(180.31deg, #6631ca 41.9%, #e1cd6b 108.55%);
             width: 100vw;
             height: 100vh;
         }
@@ -78,13 +78,13 @@
 <body>
     <div class="container">
         <img src="{{ asset('img/Pandalogo2.png') }}" alt="logo pandacaffe">
-        <p class="title">Caffe Talk</p>
+        <p class="title">Cihuy Cafe</p>
         <hr>
     </div>
     <div class="menu">
         <a href="/login" class="box">
             <img src="{{ asset('img/admin.png') }}" alt="admin">
-            <p class="text">Admin</p>
+            <p class="text">Owner</p>
         </a>
         <a href="/pesan" class="box">
             <img src="{{ asset('img/Kasir.png') }}" alt="Kasir">

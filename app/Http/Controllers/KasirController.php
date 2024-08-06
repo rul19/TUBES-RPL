@@ -65,7 +65,8 @@ class KasirController extends Controller
 
     public function cetakpesan($id){
         return view('pelanggan.cetakpesanan',[
-            'dtpemesan' => Pesanan::find($id)
+            'dtpemesan' => Pesanan::find($id),
+            
         ]);
     }
 

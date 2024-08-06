@@ -18,7 +18,7 @@ class KategoriController extends Controller
         return view('admin.kategori.index',[
             'datakategori' => Kategori::all()
         ]);
-    }
+    }   
     public function tambahkategori(Request $request)
     {
 

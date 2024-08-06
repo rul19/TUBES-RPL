@@ -65,6 +65,7 @@ $('.hapus-menu').submit(function(){
             'X-CSRF-TOKEN': $('input[name=_token]').val()
         }
     });
+    
     event.preventDefault();
     let nama = $(this).attr('dt-nama');
     let id = $(this).attr('dt-id');
@@ -86,9 +87,10 @@ $('.hapus-menu').submit(function(){
                 "Menu "+nama+" Berhasil dihapus",
                 "success"
             ).then((result)=>{
-                // window.location.reload();
+                 window.location.reload();
             });
             
         }
     })
+    
 })

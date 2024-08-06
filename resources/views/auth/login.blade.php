@@ -27,24 +27,28 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('Login_v9/css/main.css') }}">
 <!--===============================================================================================-->
 <style>
-	.closeX{
+	.container-login100 {
+		background: linear-gradient(180.31deg, #6831cf 41.9%, #e1cd6b 108.55%);
+	}
+	.closeX {
 		position: relative;
 		right: 150px;
 		bottom: 30px;
 	}
+	.login100-form-btn {
+		background-color: #ff9900; /* Button color */
+	}
 </style>
 </head>
 <body>
-	
-	
-	<div class="container-login100" style="background-image: url('{{ asset('img/caffe.jpg') }}');">
+	<div class="container-login100">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-50 p-b-30 text-center">
 			<a href="/" class="closeX"><i class="zmdi zmdi-arrow-left" style="font-size: 35px;"></i></a><br>
 			<img src="{{ asset('img/Pandalogo.png') }}" alt="Pandaman" class="mb-2">
 			<form class="login100-form validate-form" action="/login" method="POST">
                 @csrf
 				<span class="login100-form-title p-b-30">
-					Login Admin
+					Login Owner
 				</span>
 				@error('email')
 				<div class="alert alert-danger" role="alert">
@@ -62,17 +66,13 @@
 					<span class="focus-input100"></span>
 				</div>
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn bg-warning">
+					<button class="login100-form-btn">
 						Login
 					</button>
 				</div>
 			</form>
-
-			
 		</div>
 	</div>
-	
-	
 
 	<div id="dropDownSelect1"></div>
 	

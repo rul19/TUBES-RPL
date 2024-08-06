@@ -31,27 +31,32 @@ class MenuController extends Controller
                 'kategori_id' => 'required',
                 'harga' => 'required'
             ]);
+    
             if($request->file('foto')){
-                $validatemenu['foto'] = $request->file('foto')->store('foto_menu');
-            }else{
+                // Simpan file ke direktori 'public/foto_menu'
+                $path = $request->file('foto')->store('public/foto_menu');
+                // Dapatkan nama file
+                $filename = basename($path);
+                // Simpan path gambar yang dapat diakses
+                $validatemenu['foto'] = 'foto_menu/' . $filename;
+            } else {
                 $validatemenu['foto'] = "foto_menu/defaultfoto.png";
             }
+    
             $kat = Kategori::find($request->kategori_id);
             $jml = $kat->jumlah + 1;
             $kat->update(['jumlah' => $jml]);
             Menu::create($validatemenu);
-            
+    
             DB::commit();
             return redirect('/admin/datamenu')->with('success', 'Tambah Menu Berhasil!!..');
-
+    
         } catch (\Throwable $th) {
             DB::rollBack();
-            return redirect('/admin/datamenu')->with('error', 'Tambah Menu Berhasil!!..');
-
+            return redirect('/admin/datamenu')->with('error', 'Tambah Menu Gagal!!..');
         }
-        // dd($request);
-        // $request->file('foto')->store('foto_menu');
     }
+    
     public function editmenu(Request $request,$menu)
     {
         $dtold = Menu::find($menu);
