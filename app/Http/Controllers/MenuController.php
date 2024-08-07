@@ -31,17 +31,18 @@ class MenuController extends Controller
                 'kategori_id' => 'required',
                 'harga' => 'required'
             ]);
-    
+           
             if($request->file('foto')){
-                // Simpan file ke direktori 'public/foto_menu'
-                $path = $request->file('foto')->store('public/foto_menu');
-                // Dapatkan nama file
-                $filename = basename($path);
-                // Simpan path gambar yang dapat diakses
-                $validatemenu['foto'] = 'foto_menu/' . $filename;
+                $fileNameWithExt = $request->file('foto')->getClientOriginalName();
+                $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                $fileExtension = $request->file('foto')->getClientOriginalExtension();
+                $fileNameToStore = preg_replace('/\s+/', '-', $fileName) . '-' . time() . '.' . $fileExtension;
+                $path = $request->file('foto')->move('foto_menu', $fileNameToStore);
+                $validatemenu['foto'] = $fileNameToStore;
             } else {
                 $validatemenu['foto'] = "foto_menu/defaultfoto.png";
             }
+
     
             $kat = Kategori::find($request->kategori_id);
             $jml = $kat->jumlah + 1;
@@ -68,14 +69,22 @@ class MenuController extends Controller
                 'kategori_id' => 'required',
                 'harga' => 'required'
             ]);
+            
             if($request->file('foto')){
                 if ($dtold->foto != "foto_menu/defaultfoto.png") {
-                    Storage::delete($dtold->foto);
+                    Storage::delete('foto_menu/'. $dtold->foto);
                 }
-                $validatemenu['foto'] = $request->file('foto')->store('foto_menu');
+                $fileNameWithExt = $request->file('foto')->getClientOriginalName();
+                $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                $fileExtension = $request->file('foto')->getClientOriginalExtension();
+                $fileNameToStore = preg_replace('/\s+/', '-', $fileName) . '-' . time() . '.' . $fileExtension;
+                $path = $request->file('foto')->move('foto_menu', $fileNameToStore);
+                $validatemenu['foto'] = $fileNameToStore;
             }else if ($dtold->foto == "foto_menu/defaultfoto.png") {
                 $validatemenu['foto'] = "foto_menu/defaultfoto.png";
             }
+            
+
             if ($dtold->kategori_id != $request->kategori_id) {
                 $kat = Kategori::find($request->kategori_id);
                 $katOld = Kategori::find($dtold->kategori_id);

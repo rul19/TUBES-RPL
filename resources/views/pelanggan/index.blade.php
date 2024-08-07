@@ -43,7 +43,7 @@
             @foreach($dtmenu as $menu)
               @if($menu->kategori_id == $kat->id)
               <div class="card">
-                  <img src="{{ asset('storage/'.$menu->foto) }}" class="card-img-top" style="width: 200px; height: 150px" alt="{{ $menu->nama_menu }}">
+                  <img src="{{ asset('foto_menu/'.$menu->foto) }}" class="card-img-top" style="width: 200px; height: 150px" alt="{{ $menu->nama_menu }}">
                   <div class="card-body makan" data-id="{{ $menu->id }}">
                     <h5 class="card-title" data-foto="{{ $menu->foto }}" >{{ $menu->nama_menu }}</h5>
                     <p class="card-text">Rp {{ $menu->harga }}</p>

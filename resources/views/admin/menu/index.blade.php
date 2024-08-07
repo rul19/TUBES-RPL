@@ -45,7 +45,7 @@
                                         <tr>
                                             <td style="display: none;">{{ $menu->id }}</td>
                                             <td>
-                                                <img src="{{ asset('storage/' . $menu->foto) }}" style="width: 150px; height: 100px;" alt="">
+                                                <img src="{{ asset('foto_menu/' . $menu->foto) }}" style="width: 150px; height: 100px;" alt="">
                                             </td>
                                             <td>{{ $menu->nama_menu }}</td>
                                             <td>Rp {{ $menu->harga }}</td>
